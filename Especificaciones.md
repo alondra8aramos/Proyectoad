@@ -5,6 +5,9 @@ GET/POST/PUT/DELETE
 
 API DOCUMENTACION SWAGGER:
 http://localhost:8080/swagger-ui.html#/
+https://app.swaggerhub.com/apis/alondra8aramos/api-documentation/1.0
+
+
 
 Herramientas:
 JDK: Motor de lenguaje con todas las librerías.
