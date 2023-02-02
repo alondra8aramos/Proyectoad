@@ -33,6 +33,7 @@ Facil creacion con sprint initializr.
 Se pudo testear la aplicacion de manera mas simple.
 Facilidad para programacion MVC.
 Facil mapeo y manejo de objetos gracias a las librerias, asi como el facil manejo de catalogo de beans que se quieren usar.
+Lo mas importante, comunidad muy grande y activa para encontrar documentacion, ayuda, ejemplo y tutoriales para cualquieir problema que surga, como el que tuve con las versiones.
 
 
 DIFICULTADES:
