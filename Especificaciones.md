@@ -3,6 +3,8 @@ ApiRest para administracion de usuarios
 GET/POST/PUT/DELETE
 
 
+API DOCUMENTACION SWAGGER:
+http://localhost:8080/swagger-ui.html#/
 
 Herramientas:
 JDK: Motor de lenguaje con todas las librerías.
