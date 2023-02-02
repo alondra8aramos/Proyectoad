@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -32,7 +31,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.libertyf.user.administration.demo.model.services.IUsuarioService;
 import com.libertyf.user.administration.demo.model.entity.Usuario;
 
-//Suponiendo que front se encuentra en 4200
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
@@ -46,7 +44,6 @@ public class UsuarioRestController {
 		return usuarioService.findAll();
 	}
 
-	//solo 10 usuarios
 	@GetMapping("/usuarios/page/{page}")
 	public Page<Usuario> index(@PathVariable Integer page) {
 		return usuarioService.findAll(PageRequest.of(page, 10));
@@ -90,7 +87,7 @@ public class UsuarioRestController {
 	@DeleteMapping("/usuarios/delete/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
-	
+
 		usuarioService.delete(id);
 	}
 
@@ -109,12 +106,12 @@ public class UsuarioRestController {
 			} catch (IOException e) {
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
-			
+
 			String nombreFotoAnterior = usuario.getFoto();
-			if(nombreFotoAnterior !=null && nombreFotoAnterior.length() >0) {
+			if (nombreFotoAnterior != null && nombreFotoAnterior.length() > 0) {
 				Path rutaFotoAnterior = Paths.get("Uploads").resolve(nombreFotoAnterior).toAbsolutePath();
 				File archivoFotoAnterior = rutaFotoAnterior.toFile();
-				if(archivoFotoAnterior.exists() && archivoFotoAnterior.canRead()) {
+				if (archivoFotoAnterior.exists() && archivoFotoAnterior.canRead()) {
 					archivoFotoAnterior.delete();
 				}
 			}
